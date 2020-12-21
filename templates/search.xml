@@ -5,7 +5,8 @@
     {% if post.indexing == undefined or post.indexing %}
     <entry>
       <title>{{ post.title }}</title>
-      <link href="{{ (url + post.path) | uriencode }}"/>
+      <link href="/{{ (url + post.path) | uriencode }}"/>
+      <img src="/{{ (post.path) | uriencode }}"/>
       <url>{{ (url + post.path) | uriencode }}</url>
       {% if content %}
         <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
